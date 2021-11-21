@@ -9,6 +9,8 @@ namespace CM.WeeklyTeamReport.Domain.Tests
         public void ShouldBeAbleToCreateCompany()
         {
             var company = new Company();
+            company.CompanyName = "ANKO";
+            Assert.Equal("ANKO", company.CompanyName);
         }
     }
 }
