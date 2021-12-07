@@ -2,6 +2,7 @@ using System;
 using Xunit;
 using CM.WeeklyTeamReport.Domain.Repositories;
 using FluentAssertions;
+using CM.WeeklyTeamReport.Domain.Entites;
 
 namespace CM.WeeklyTeamReport.Domain.IntegrationTests
 {
@@ -21,7 +22,6 @@ namespace CM.WeeklyTeamReport.Domain.IntegrationTests
 
             var weeklyReport = new WeeklyReport()
             {
-                WeeklyReportId = 1,
                 TeamMemberId = 1,
                 MoraleLevel = 5,
                 MoraleComment = "Some Note",

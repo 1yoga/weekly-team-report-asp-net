@@ -2,6 +2,7 @@ using System;
 using Xunit;
 using CM.WeeklyTeamReport.Domain.Repositories;
 using FluentAssertions;
+using CM.WeeklyTeamReport.Domain.Entites;
 
 namespace CM.WeeklyTeamReport.Domain.IntegrationTests
 {
@@ -20,7 +21,7 @@ namespace CM.WeeklyTeamReport.Domain.IntegrationTests
             var companyRepository = new CompanyRepository();
 
             var company = new Company();
-            company.CompanyName = "ANKO";
+            company.CompanyName = "Facebook";
 
             company = companyRepository.Create(company);
 
@@ -37,6 +38,16 @@ namespace CM.WeeklyTeamReport.Domain.IntegrationTests
 
             company.Should().NotBeNull();
             company.CompanyId.Should().Be(157);
+        }
+
+        [Fact]
+        public void ShouldBeAbleToReadAllCompaniesFromDataBase()
+        {
+            var companyRepository = new CompanyRepository();
+
+            var companies = companyRepository.ReadAll(null);
+
+            companies.Should().NotBeNull();
         }
 
         [Fact]

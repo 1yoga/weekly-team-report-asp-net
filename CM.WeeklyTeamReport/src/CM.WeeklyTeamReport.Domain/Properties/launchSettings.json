@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CM.WeeklyTeamReport.Domain": {
+      "commandName": "Project",
+      "nativeDebugging": false
+    }
+  }
+}

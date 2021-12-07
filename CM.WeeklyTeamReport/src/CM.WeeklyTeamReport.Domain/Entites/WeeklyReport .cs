@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CM.WeeklyTeamReport.Domain
+namespace CM.WeeklyTeamReport.Domain.Entites
 {
     public class WeeklyReport
     {

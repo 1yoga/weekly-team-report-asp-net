@@ -1,4 +1,5 @@
 using System;
+using CM.WeeklyTeamReport.Domain.Entites;
 using Xunit;
 
 namespace CM.WeeklyTeamReport.Domain.Tests
@@ -8,9 +9,11 @@ namespace CM.WeeklyTeamReport.Domain.Tests
         [Fact]
         public void ShouldBeAbleToCreateCompany()
         {
-            var company = new Company();
-            company.CompanyName = "ANKO";
-            Assert.Equal("ANKO", company.CompanyName);
+            var company = new Company
+            {
+                CompanyName = "Google"
+            };
+            Assert.Equal("Google", company.CompanyName);
         }
     }
 }

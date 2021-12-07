@@ -1,7 +1,9 @@
 ﻿using System;
+using CM.WeeklyTeamReport.Domain;
 using Xunit;
 using CM.WeeklyTeamReport.Domain.Repositories;
 using FluentAssertions;
+using CM.WeeklyTeamReport.Domain.Entites;
 
 namespace CM.WeeklyTeamReport.Domain.IntegrationTests
 {
@@ -42,6 +44,16 @@ namespace CM.WeeklyTeamReport.Domain.IntegrationTests
 
             teamMember.Should().NotBeNull();
             teamMember.TeamMemberId.Should().Be(1);
+        }
+
+        [Fact]
+        public void ShouldBeAbleToReadAllTeamMembersFromDataBase()
+        {
+            var teamMemberRepository = new TeamMemberRepository();
+
+            var teamMembers = teamMemberRepository.ReadAll(157);
+
+            teamMembers.Should().NotBeNull();
         }
 
         [Fact]

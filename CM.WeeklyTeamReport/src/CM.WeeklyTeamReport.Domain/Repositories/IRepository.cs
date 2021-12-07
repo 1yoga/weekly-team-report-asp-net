@@ -11,6 +11,6 @@ namespace CM.WeeklyTeamReport.Domain.Repositories
         TEntity Read(int entityId);
         void Update(TEntity entity);
         void Delete(TEntity entity);
-
+        List<TEntity> ReadAll(int? entityId);
     }
 }

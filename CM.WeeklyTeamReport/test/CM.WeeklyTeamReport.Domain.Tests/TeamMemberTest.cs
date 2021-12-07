@@ -1,4 +1,5 @@
 ﻿using System;
+using CM.WeeklyTeamReport.Domain.Entites;
 using Xunit;
 
 namespace CM.WeeklyTeamReport.Domain.Tests

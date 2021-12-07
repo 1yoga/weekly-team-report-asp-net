@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CM.WeeklyTeamReport.Domain.Entites;
 
 namespace CM.WeeklyTeamReport.Domain.Repositories
 {
@@ -241,6 +242,11 @@ namespace CM.WeeklyTeamReport.Domain.Repositories
                 command.ExecuteNonQuery();
 
             }
+        }
+
+        public List<WeeklyReport> ReadAll(int? id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CM.WeeklyTeamReport.Domain.Entites;
 
 namespace CM.WeeklyTeamReport.Domain.Repositories
 {
@@ -109,6 +110,26 @@ namespace CM.WeeklyTeamReport.Domain.Repositories
 
                 command.ExecuteNonQuery();
 
+            }
+        }
+
+        public List<Company> ReadAll(int? id)
+        {
+            List<Company> companies = new List<Company>();
+            using (var connection = GetSqlConnection())
+            {
+                var command = new SqlCommand("SELECT * FROM Companies"
+                    , connection);
+
+                var reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    var company = MapCompany(reader);
+                    companies.Add(company);
+                }
+
+                return companies;
             }
         }
     }
